@@ -64,16 +64,33 @@
 .searchbar-container input {
     background-color: #373940;
     border: none;
-    height: 20px;
-    width: 166px;
-    padding: 10px;
-    font-size: 20px;
+    height: 25px;
+    width: 135px;
+    font-size: 18px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    padding-left: 45px;
+}
+
+.searchbar-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding-right: 15px;
+    margin-right: -50px;
+    /* schuift knop over input */
+    background: none;
+    border: none;
+    z-index: 1;
 }
 
 .searchbar-container img {
-    width: 10px;
-    height: 10px;
-
+    display: flex;
+    width: 24px;
+    height: 24px;
 }
 
 .highlighted-react {
