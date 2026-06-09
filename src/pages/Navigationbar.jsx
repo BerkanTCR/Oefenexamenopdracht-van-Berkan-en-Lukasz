@@ -7,7 +7,7 @@ const Navigationbar = () => {
             <nav className="navigation">
 
                 <div className="logo-title-container">
-                    <img className="berkan-logo" src="./src/assets/berkan-logo.png" alt="" />
+                    <Link to="/"><img className="berkan-logo" src="/src/assets/berkan-logo.png" alt="" /></Link>
                     <h2>Examenopdracht <span className="highlighted-react">React</span> van Berkan & Lukasz</h2>
                 </div>
 
@@ -17,8 +17,8 @@ const Navigationbar = () => {
                 </ul>
 
                 <div className="searchbar-container">
-
-                    <input type="text" placeholder="Zoeken..."/>
+                    <button type="submit"><img src="/src/assets/search-icon.png" alt="" /></button>
+                    <input type="text" placeholder="Zoeken..." />
                 </div>
 
             </nav >

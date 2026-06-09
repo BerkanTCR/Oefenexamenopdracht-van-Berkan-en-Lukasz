@@ -64,19 +64,37 @@
 .searchbar-container input {
     background-color: #373940;
     border: none;
-    height: 20px;
-    width: 166px;
-    padding: 10px;
-    font-size: 20px;
+    height: 25px;
+    width: 135px;
+    font-size: 18px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    padding-left: 45px;
+}
+
+.searchbar-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding-right: 15px;
+    margin-right: -50px;
+    /* schuift knop over input */
+    background: none;
+    border: none;
+    z-index: 1;
 }
 
 .searchbar-container img {
-    width: 10px;
-    height: 10px;
-
+    display: flex;
+    width: 24px;
+    height: 24px;
 }
 
 .highlighted-react {
+    font-weight: bold;
     color: #61DAFB;
 }
 
@@ -85,10 +103,12 @@
 }
 
 
+
 .nopage-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 
 .nopage-container {
@@ -96,17 +116,76 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 100px;
+    margin: 132px;
     height: 50vh;
     width: 500px;
 }
 
+.nopage-container img {
+    width: 700px;
+    height: 400px;
+}
+
 .nopage-container h1 {
-    color: rgb(0, 0, 0);
-    font-weight: 400;
+    color: white;
+    font-weight: lighter;
 }
 
 .nopage-container p {
-    font-weight: 400;
-    color: rgb(0, 0, 0);
+    color: white;
+    font-weight: lighter;
+}
+
+.homepage-wrapper {}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*background-image: url(/src/assets/pattern-better.png); /* */
+    background-color: #202020;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+
+.hero-container img {
+    width: 159px;
+    height: 140px;
+}
+
+.hero-container h1 {
+    color: #61DAFB;
+    font-size: 65px;
+}
+
+.hero-container p {
+    color: white;
+    font-size: 35px;
+    font-weight: lighter;
+}
+
+.hero-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #61DAFB;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.hero-container button:hover {
+    background-color: #4dafca;
+}
+
+.bestaan {
+    font-weight: bold;
 }
