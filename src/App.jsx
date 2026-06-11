@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom"; 
 import Navigationbar from "./pages/Navigationbar.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import Documentatie from "./pages/Documentatie.jsx";
-import Downloaden from "./pages/Downloaden.jsx";
+import Downloaden from "./pages/Downloaden.jsx";  
 import NoPage from "./pages/NoPage.jsx";
+import CardDetail from "./pages/CardDetail.jsx";
 import './App.css'
 
 const App = () => {
@@ -18,6 +19,8 @@ const App = () => {
                         <Route path="/documentatie" element={<Documentatie />} />
                         <Route path="/downloaden" element={<Downloaden />} />
                         <Route path="*" element={<NoPage />} />
+                        <Route path="/cardDetail/:cardId" element={<CardDetail/>} />
+                        
 
                     </Route>
                 </Routes>
