@@ -1,6 +1,7 @@
 * {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scrollbar-width: none;
 }
 
 .navigation {
@@ -10,6 +11,8 @@
     height: 100px;
     width: 100%;
     font-weight: 300;
+    width: 100vw;
+
 }
 
 .unordered-list {
@@ -73,6 +76,19 @@
     padding-left: 45px;
 }
 
+.searchbar-container input:focus {
+    background-color: #373940;
+    border: none;
+    height: 25px;
+    width: 135px;
+    font-size: 18px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    padding-left: 45px;
+    outline: 1px solid rgb(255, 255, 255);
+}
+
 .searchbar-container button {
     display: flex;
     align-items: center;
@@ -81,7 +97,6 @@
     border: none;
     padding-right: 15px;
     margin-right: -50px;
-    /* schuift knop over input */
     background: none;
     border: none;
     z-index: 1;
@@ -101,8 +116,6 @@
 .berkan-logo {
     border: 1px solid hsla(0, 0%, 50%, .159);
 }
-
-
 
 .nopage-wrapper {
     display: flex;
@@ -143,12 +156,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /*background-image: url(/src/assets/pattern-better.png); /* */
+    /*background-image: url(/src/assets/pattern.png); /* */
     background-color: #202020;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 450px;
+    width: 100vw;
 }
 
 .hero-container img {
@@ -182,10 +196,210 @@
     margin-bottom: 10px;
 }
 
+.hero-container a {
+    text-decoration: none;
+}
+
 .hero-container button:hover {
     background-color: #4dafca;
 }
 
+.hero-container-2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 500px;
+    padding: 15px;
+}
+
+.block img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.block h1 {
+    font-size: 35px;
+}
+
+.block p {
+    font-size: 25px;
+    width: 350px;
+}
+
+.hero-container-3 {
+    display: flex;
+    background-color: #E9ECF1;
+    padding: 40px;
+}
+
+.sandpack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 140px;
+}
+
+.hero-container-3-text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 140px;
+    width: 520px;
+}
+
+.hero-container-3-text-container h1 {
+    font-size: 30px;
+}
+
+.hero-container-3-text-container p {
+    font-size: 25px;
+}
+
+.hero-container-4 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px;
+}
+
+.hero-container-4 img {}
+
+.hero-container-4 p {
+    width: 690px;
+    font-size: 25px;
+
+}
+
 .bestaan {
     font-weight: bold;
+}
+
+.footer {
+    background-color: #1C1C1C;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-container img {
+    width: 450px;
+}
+
+.footer-container p {
+    color: white;
+    font-weight: lighter;
+    font-size: 30px;
+    margin-right: 45px;
+}
+
+.footer-2 {
+    background-color: #1C1C1C;
+    padding: 20px;
+}
+
+.footer-container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-container-2 img {
+    width: 450px;
+}
+
+.footer-container-2 p {
+    color: white;
+    font-weight: lighter;
+    font-size: 30px;
+    margin-right: 45px;
+}
+
+.download-container {
+    display: flex;
+    justify-content: center;
+    height: 51vh;
+    width: 80vw;
+    margin: 0 auto;
+
+}
+
+.download-h1-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.download-h1-container h1 {
+    color: #417E38;
+    font-size: 50px;
+}
+
+.nodejs-container {
+    width: 50%;
+}
+
+.nodejs-container p {
+    font-size: 22px;
+    line-height: 35px;
+    font-weight: lighter;
+
+}
+
+.nodejs-logo-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.nodejs-logo-container img {
+    height: 70%;
+    padding-top: 30px;
+    padding-left: 150px;
+}
+
+.nodejs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.download-buttons-container {
+    margin-left: 155px;
+}
+
+.download-buttons-container button {
+    width: 610px;
+    height: 60px;
+    background-color: #417E38;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 80px;
+}
+
+.download-buttons-container button:hover {
+    width: 610px;
+    height: 60px;
+    background-color: #396e31;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    border: none;
+
 }
