@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom"
+import SearchBar from "./SearchBar";
 
 const Navigationbar = () => {
     return (
@@ -16,10 +17,7 @@ const Navigationbar = () => {
                     <li><Link to="/downloaden">Downloaden</Link></li>
                 </ul>
 
-                <div className="searchbar-container">
-                    <button type="submit"><img src="/src/assets/search-icon.png" alt="" /></button>
-                    <input type="text" placeholder="Zoeken..." />
-                </div>
+                <SearchBar />
 
             </nav >
 
