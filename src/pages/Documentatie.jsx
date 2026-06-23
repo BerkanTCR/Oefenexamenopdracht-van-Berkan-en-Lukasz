@@ -18,11 +18,11 @@ const Documentatie = () => {
     return (
         <main>
 
-
             <section className="doc-container">
 
-                <h2 className="doc-h2">React leren!</h2>
+                <h1 className="doc-h2">React leren!</h1>
                 <p className="doc-p">Welkom op de documentatiepagina! Hier leer je de belangrijkste onderdelen van React en hoe je deze gebruikt om interactieve webapplicaties te bouwen.</p>
+
                 <section className="cardcontainer">
 
                     {showData.map((d, index) => (
