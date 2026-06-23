@@ -46,10 +46,7 @@ main h3 {
     grid-template-rows: repeat(3, 1fr);
     max-width: 100%;
     padding: 24px 0;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-    margin-top: 16px;
-
+    margin-bottom: 15px;
 }
 
 
@@ -90,22 +87,24 @@ ul {
     align-items: center;
     flex-direction: column;
     width: 100vw;
+    background-color: #202020;
 }
 
 .doc-h2 {
     padding-top: 15px;
     font-size: 50px;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
 }
 
 .doc-p {
     font-size: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .ads {
     font-weight: bold;
+    
 }
 
 .card-info {
