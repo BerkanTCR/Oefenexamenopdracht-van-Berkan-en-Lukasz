@@ -1,201 +1,331 @@
-
-
 const data = [
     {
         id: 1,
         title: "Components",
         descriptions: "React components zijn herbruikbare UI-blokken.",
-        info: `
-Components vormen de basis van iedere React-applicatie. In plaats van een volledige website in één groot bestand te schrijven, deel je de interface op in kleine, herbruikbare onderdelen. Denk bijvoorbeeld aan een navigatiebalk, footer, productkaart of formulier. Elk onderdeel krijgt zijn eigen component met een eigen functie.
 
-    Het grote voordeel van components is dat je code overzichtelijker en beter onderhoudbaar wordt. Wanneer je een knop of kaartje meerdere keren nodig hebt, hoef je deze maar één keer te maken. Daarna kun je dezelfde component overal opnieuw gebruiken. Dit bespaart tijd en voorkomt dubbele code.
+        infoTop: `
+Components vormen de basis van iedere React-applicatie. Een React app is opgebouwd uit kleine herbruikbare onderdelen die samen de volledige interface vormen.
 
-    React werkt met function components. Dit zijn JavaScript-functies die JSX teruggeven. JSX lijkt op HTML, maar wordt geschreven binnen JavaScript. Hierdoor kun je logica en interface eenvoudig combineren.
+In plaats van één grote pagina te bouwen, split je alles op in losse components zoals navigatiebars, buttons, kaarten en formulieren. Dit maakt je project veel overzichtelijker en makkelijker te onderhouden.
 
-    Door je applicatie op te delen in components wordt samenwerken ook makkelijker. Iedere developer kan werken aan een apart onderdeel van de applicatie zonder dat alles door elkaar loopt.`
+Elke component heeft één duidelijke taak, waardoor je code schaalbaar blijft.
+    `,
 
+        code: `
+function Card({ title }) {
+  return (
+    <div style={{ padding: "10px", border: "1px solid #ccc" }}>
+      <h3>{title}</h3>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <Card title="Navbar component" />
+      <Card title="Footer component" />
+      <Card title="Product card" />
+    </>
+  );
+}
+    `,
+
+        infoBottom: `
+Components zorgen ervoor dat je code herbruikbaar wordt. Je schrijft een component één keer en gebruikt hem daarna overal in je app.
+
+React components zijn function components: simpele JavaScript functies die JSX teruggeven.
+
+Dit maakt samenwerken in teams makkelijker omdat iedereen aan losse onderdelen kan werken.
+    `
     },
-     {
+
+    {
         id: 2,
         title: "Props",
         descriptions: "React props geven data door aan components.",
-        info: `Props staat voor “properties” en worden gebruikt om gegevens door te geven tussen components. Meestal geeft een parent component data door aan een child component. Hierdoor kun je dynamische en flexibele interfaces bouwen.
 
-Stel dat je een productkaart hebt voor een webshop. In plaats van voor ieder product een aparte component te maken, kun je één component gebruiken en via props verschillende gegevens meegeven, zoals de naam, prijs en afbeelding van het product.
+        infoTop: `
+Props (properties) worden gebruikt om data door te geven van de ene component naar de andere.
 
-Props zijn read-only. Dat betekent dat een component de ontvangen gegevens niet direct mag aanpassen. Dit zorgt ervoor dat de dataflow binnen React duidelijk en voorspelbaar blijft.
+Meestal stuurt een parent component informatie naar een child component. Hierdoor kun je één component flexibel gebruiken voor verschillende data.
+    `,
 
-Props maken components herbruikbaar. Eén component kan namelijk verschillende informatie tonen afhankelijk van welke props worden meegegeven. Hierdoor schrijf je minder code en wordt je applicatie makkelijker schaalbaar.
+        code: `
+function Button({ text }) {
+  return <button>{text}</button>;
+}
 
-Daarnaast kunnen props niet alleen tekst bevatten, maar ook functies, arrays, objecten en zelfs andere components. Hierdoor zijn props een belangrijk onderdeel van communicatie binnen React-applicaties.`
+export default function App() {
+  return (
+    <>
+      <Button text="Opslaan" />
+      <Button text="Annuleren" />
+      <Button text="Versturen" />
+    </>
+  );
+}
+    `,
 
+        infoBottom: `
+Props zijn read-only, wat betekent dat ze niet aangepast mogen worden binnen een component.
 
+Dit zorgt voor een voorspelbare dataflow binnen je applicatie.
+
+Door props kun je één component hergebruiken in veel verschillende situaties zonder extra code te schrijven.
+    `
     },
+
     {
         id: 3,
         title: "useState",
         descriptions: "React useState bewaart veranderbare data.",
-        info: `UseState is een Hook in React waarmee je state kunt toevoegen aan function components. State is informatie die kan veranderen tijdens het gebruik van de applicatie. Denk bijvoorbeeld aan een teller, een geopende modal, een winkelwagen of de inhoud van een inputveld.
 
-Wanneer de state verandert, rendert React de component automatisch opnieuw. Hierdoor blijft de gebruikersinterface altijd synchroon met de actuele gegevens.
+        infoTop: `
+useState is een React Hook waarmee je state toevoegt aan function components.
 
-Met useState kun je interactieve websites maken. Zonder state zouden gebruikers geen dynamische veranderingen zien wanneer ze ergens op klikken of gegevens invoeren.
+State is data die kan veranderen tijdens het gebruik van de applicatie, zoals een teller, inputveld of toggle menu.
+    `,
 
-De Hook bestaat uit twee onderdelen:
+        code: `
+import { useState } from "react";
 
-de actuele waarde van de state
-een functie om die waarde aan te passen
+export default function App() {
+  const [count, setCount] = useState(0);
 
-Bijvoorbeeld:
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={() => setCount(count + 1)}>
+        Verhoog
+      </button>
+    </div>
+  );
+}
+    `,
 
-een teller die omhoog gaat wanneer je op een knop klikt
-een menu dat opent en sluit
-een formulier dat gebruikersinvoer opslaat
+        infoBottom: `
+Wanneer state verandert, rendert React automatisch de component opnieuw.
 
-State helpt React om veranderingen binnen de applicatie efficiënt bij te houden. Hierdoor reageren websites snel op acties van gebruikers zonder dat de volledige pagina opnieuw geladen hoeft te worden.`
+useState bestaat uit twee delen:
+- de huidige waarde
+- een functie om die waarde te updaten
 
+Hierdoor kun je interactieve interfaces bouwen die reageren op gebruikersacties.
+    `
     },
+
     {
         id: 4,
         title: "useEffect",
         descriptions: "React useEffect voert code uit na rendering.",
-        info:`useEffect is een Hook waarmee je side effects kunt uitvoeren binnen een component. Side effects zijn acties die buiten het normale renderproces vallen. Denk bijvoorbeeld aan:
 
-data ophalen uit een API
-timers gebruiken
-event listeners toevoegen
-de titel van de pagina aanpassen
+        infoTop: `
+useEffect is een Hook voor side effects.
 
-Een component rendert normaal gesproken alleen de interface, maar soms moet er extra logica uitgevoerd worden nadat de component geladen is. Hiervoor gebruik je useEffect.
+Side effects zijn acties zoals API calls, timers of het aanpassen van externe data buiten de render van de component.
+    `,
 
-Met dependency arrays kun je bepalen wanneer de effect-functie uitgevoerd moet worden:
+        code: `
+import { useEffect, useState } from "react";
 
-zonder dependency array → na iedere render
-met lege array [] → alleen bij het laden van de component
-met dependencies → wanneer bepaalde waarden veranderen
+export default function App() {
+  const [message, setMessage] = useState("Laden...");
 
-useEffect wordt veel gebruikt in combinatie met API-calls. Bijvoorbeeld om gebruikersgegevens op te halen zodra een pagina geopend wordt.
+  useEffect(() => {
+    setTimeout(() => {
+      setMessage("Data geladen!");
+    }, 1500);
+  }, []);
 
-Daarnaast kun je met cleanup functions ervoor zorgen dat oude listeners of timers netjes worden verwijderd. Dit voorkomt geheugenlekken en zorgt voor betere prestaties.`
+  return <h1>{message}</h1>;
+}
+    `,
 
+        infoBottom: `
+useEffect bepaalt wanneer code wordt uitgevoerd:
+- geen dependency array → elke render
+- lege array → alleen bij mount
+- dependencies → wanneer bepaalde values veranderen
+
+Dit maakt het ideaal voor data fetching en synchronisatie.
+    `
     },
+
     {
         id: 5,
         title: "Router",
         descriptions: "React Router beheert navigatie tussen pagina’s",
-        info:`Een router zorgt ervoor dat gebruikers tussen verschillende pagina’s kunnen navigeren binnen een React-applicatie zonder dat de hele website opnieuw geladen wordt. Dit maakt de applicatie sneller en zorgt voor een soepelere gebruikerservaring.
 
-In React wordt vaak React Router gebruikt. Hiermee kun je routes maken voor pagina’s zoals:
+        infoTop: `
+React Router zorgt ervoor dat je binnen een single-page application kunt navigeren zonder dat de pagina opnieuw laadt.
 
-Home
-About
-Contact
-Dashboard
+Dit geeft een snelle en moderne gebruikerservaring.
+    `,
 
-Bij traditionele websites wordt iedere pagina opnieuw geladen vanaf de server. Bij React-applicaties gebeurt navigatie meestal client-side. Dat betekent dat alleen de inhoud verandert terwijl de pagina zelf actief blijft.
+        code: `
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-Een router koppelt URL’s aan specifieke components. Wanneer een gebruiker naar een bepaalde route gaat, toont React automatisch de juiste pagina.
+function Home() {
+  return <h1>Home</h1>;
+}
 
-Ook kun je dynamische routes maken, bijvoorbeeld voor productpagina’s of gebruikersprofielen. Hierdoor kun je één route gebruiken voor meerdere soorten content.
+function About() {
+  return <h1>About</h1>;
+}
 
-Routing is essentieel voor moderne single-page applications (SPA’s), omdat het zorgt voor snelle navigatie en een app-achtige ervaring.`
+export default function App() {
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+    `,
+
+        infoBottom: `
+React Router koppelt URLs aan components.
+
+Dit is essentieel voor moderne apps zoals dashboards, webshops en SaaS platforms waar meerdere pagina’s nodig zijn zonder reload.
+    `
     },
+
     {
         id: 6,
         title: "List & Keys",
         descriptions: "React lists & keys tonen lijsten efficiënt.",
-        info:`In React kun je eenvoudig lijsten van gegevens tonen met behulp van JavaScript-methodes zoals .map(). Dit wordt vaak gebruikt voor:
 
-producten in een webshop
-berichten op social media
-gebruikerslijsten
-comments
+        infoTop: `
+In React kun je lijsten van data tonen met de JavaScript functie .map().
 
-Bij iedere lijst moet React weten welk element uniek is. Daarom gebruik je keys. Een key is een unieke waarde die React helpt om elementen efficiënt bij te werken.
+Dit wordt vaak gebruikt voor arrays zoals producten, comments of gebruikers.
+    `,
 
-Wanneer gegevens veranderen, vergelijkt React oude en nieuwe elementen met elkaar. Dankzij keys weet React precies welke onderdelen aangepast, toegevoegd of verwijderd zijn.
+        code: `
+const items = ["Apple", "Banana", "Orange"];
 
-Goede keys verbeteren de prestaties van je applicatie. Vaak wordt een unieke ID gebruikt als key.
+export default function App() {
+  return (
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+    `,
 
-Zonder keys kan React waarschuwingen geven en kunnen updates minder efficiënt verlopen. Daarom zijn keys belangrijk bij het werken met dynamische content.
+        infoBottom: `
+Keys helpen React om te herkennen welke items veranderd zijn.
 
-Lists en keys maken het mogelijk om grote hoeveelheden data overzichtelijk en dynamisch weer te geven binnen je applicatie.`
+Zonder keys kan React inefficiënt opnieuw renderen.
+
+In echte projecten gebruik je meestal een unieke ID in plaats van een index.
+    `
     },
+
     {
         id: 7,
         title: "Events",
         descriptions: "React events reageren op gebruikersacties.",
-        info:`Events zorgen ervoor dat gebruikers kunnen communiceren met een website. Zonder events zou een website volledig statisch zijn en nergens op reageren.
 
-In React worden events gebruikt voor acties zoals:
+        infoTop: `
+Events maken een website interactief.
 
-klikken op een knop
-typen in een inputveld
-bewegen met de muis
-versturen van een formulier
+Zonder events zou een website alleen statische informatie tonen zonder reacties op gebruikers.
+    `,
 
-React gebruikt hiervoor event handlers zoals:
+        code: `
+export default function App() {
+  function handleClick() {
+    alert("Button clicked!");
+  }
 
-onClick
-onChange
-onSubmit
-onMouseOver
+  return <button onClick={handleClick}>Klik mij</button>;
+}
+    `,
 
-Wanneer een event plaatsvindt, wordt automatisch een functie uitgevoerd. Hiermee kun je state aanpassen, data versturen of onderdelen van de interface veranderen.
+        infoBottom: `
+React gebruikt Synthetic Events waardoor events consistent werken in alle browsers.
 
-Events zijn een belangrijk onderdeel van interactieve webapplicaties. Ze zorgen ervoor dat gebruikers realtime feedback krijgen op hun acties.
-
-React gebruikt een eigen systeem genaamd Synthetic Events. Dit zorgt ervoor dat events consistent werken in verschillende browsers.
-
-Door events slim te combineren met state en props kun je krachtige interactieve interfaces bouwen.`
+Events worden vaak gecombineerd met state om dynamische UI te maken.
+    `
     },
+
     {
         id: 8,
         title: "Forms & inputs",
         descriptions: "React forms & inputs verwerken gebruikersinvoer.",
-        info:`Forms en inputs worden gebruikt om gegevens van gebruikers te verzamelen. Denk bijvoorbeeld aan:
 
-inlogformulieren
-registratiepagina’s
-zoekbalken
-contactformulieren
+        infoTop: `
+Forms worden gebruikt om data van gebruikers te verzamelen zoals login, registratie en zoekvelden.
 
-In React worden formulieren vaak gekoppeld aan state. Dit betekent dat de waarde van een inputveld direct wordt opgeslagen binnen de component.
+Ze vormen een belangrijk onderdeel van elke interactieve website.
+    `,
 
-Dit heet een controlled component. Hierdoor heb je volledige controle over wat gebruikers invoeren en kun je eenvoudig validatie toevoegen.
+        code: `
+import { useState } from "react";
 
-Met forms kun je:
+export default function App() {
+  const [text, setText] = useState("");
 
-controleren of velden correct zijn ingevuld
-foutmeldingen tonen
-gegevens versturen naar een server
-realtime feedback geven
+  return (
+    <>
+      <input
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <p>{text}</p>
+    </>
+  );
+}
+    `,
 
-Inputs reageren meestal op onChange events. Iedere keer dat een gebruiker typt, wordt de state bijgewerkt.
+        infoBottom: `
+Controlled inputs geven je volledige controle over gebruikersdata.
 
-Goede formulierafhandeling is belangrijk voor gebruiksvriendelijke websites. Een duidelijk formulier zorgt voor minder fouten en een betere gebruikerservaring.`
-
+Je kunt validatie, foutmeldingen en realtime feedback toevoegen om de UX te verbeteren.
+    `
     },
+
     {
         id: 9,
         title: "useNavigate",
         descriptions: "React Router useNavigate navigeert naar een andere pagina.",
-        info:`useNavigate is een Hook uit React Router waarmee je gebruikers programmatisch naar een andere pagina kunt sturen.
 
-Normaal gesproken navigeert een gebruiker via links of knoppen, maar soms wil je automatisch een andere pagina openen nadat een actie is uitgevoerd. Bijvoorbeeld:
+        infoTop: `
+useNavigate is een hook van React Router waarmee je gebruikers via code naar een andere pagina kunt sturen zonder links te gebruiken.
+    `,
 
-na succesvol inloggen
-na het versturen van een formulier
-na het afronden van een betaling
+        code: `
+import { useNavigate } from "react-router-dom";
 
-Met useNavigate kun je routes wijzigen via JavaScript. Hierdoor krijg je meer controle over de navigatie binnen je applicatie.
+export default function App() {
+  const navigate = useNavigate();
 
-Je kunt gebruikers ook terugsturen naar de vorige pagina of dynamische routes openen op basis van bepaalde gegevens.
+  return (
+    <button onClick={() => navigate("/about")}>
+      Ga naar About
+    </button>
+  );
+}
+    `,
 
-useNavigate wordt veel gebruikt in moderne React-applicaties omdat het zorgt voor flexibele en dynamische navigatie zonder volledige pagina-herladingen.
+        infoBottom: `
+Dit wordt vaak gebruikt na acties zoals login, form submit of betalingen.
 
-Door routing en navigatie slim te combineren kun je een professionele gebruikerservaring creëren die snel en soepel aanvoelt.`
+Het geeft je volledige controle over navigatie binnen je applicatie.
+    `
     }
-]
+];
 
 export default data;
