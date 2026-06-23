@@ -24,7 +24,7 @@ main h2 {
     margin-bottom: 12px;
 }
 
-main > p {
+main>p {
     font-size: 15px;
     color: #333;
     margin-bottom: 16px;
@@ -49,6 +49,7 @@ main h3 {
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
     margin-top: 16px;
+
 }
 
 
@@ -70,12 +71,12 @@ main h3 {
 }
 
 
-.sidebar{
+.sidebar {
     display: flex;
-   flex-direction: column;
-   height: 90vh;
-   width: 20vh;
-background-color: #F4F4F4;
+    flex-direction: column;
+    height: 90vh;
+    width: 20vh;
+    background-color: #F4F4F4;
 
 }
 
@@ -83,19 +84,27 @@ ul {
     list-style-type: none;
 }
 
-.doc-container{
-    width: 80vw;
+.doc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
 }
 
-.sidebar ul li {
-padding: 15px 0px;
+.doc-h2 {
+    padding-top: 15px;
+    font-size: 50px;
+    color: #000000;
+    font-weight: bold;
 }
 
-.sidebar ul {
-    padding-left: 10px;
+.doc-p {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
 }
 
-.ads{
+.ads {
     font-weight: bold;
 }
 
@@ -115,7 +124,7 @@ padding: 15px 0px;
 
     max-width: 850px;
 
-    margin: 20px auto; 
+    margin: 20px auto;
 
     white-space: pre-line;
 }
@@ -134,14 +143,14 @@ padding: 15px 0px;
     margin: 0 auto 16px;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 6px 18px rgba(17,24,39,0.08);
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
     font-weight: 600;
 }
 
 .back-button:hover {
     background-color: #0f1724;
     transform: translateY(-1px);
-    box-shadow: 0 10px 28px rgba(17,24,39,0.12);
+    box-shadow: 0 10px 28px rgba(17, 24, 39, 0.12);
 }
 
 .card-title {

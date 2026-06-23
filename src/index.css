@@ -68,9 +68,9 @@
     background-color: #373940;
     border: none;
     height: 25px;
-    width: 135px;
-    font-size: 18px;
-    padding: 15px;
+    width: 200px;
+    font-size: 20px;
+    padding: 25px;
     color: white;
     border-radius: 5px;
     padding-left: 45px;
@@ -80,9 +80,9 @@
     background-color: #373940;
     border: none;
     height: 25px;
-    width: 135px;
-    font-size: 18px;
-    padding: 15px;
+    width: 200px;
+    font-size: 20px;
+    padding: 25px;
     color: white;
     border-radius: 5px;
     padding-left: 45px;
@@ -106,6 +106,34 @@
     display: flex;
     width: 24px;
     height: 24px;
+}
+
+.searchbar-wrapper {
+    position: relative;
+    width: 250px;
+    display: inline-block;
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background: #f2f2f2;
 }
 
 .highlighted-react {
@@ -156,13 +184,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /*background-image: url(/src/assets/pattern.png); /* */
+    background-image: url(/src/assets/pattern.png);
     background-color: #202020;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 450px;
     width: 100vw;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .hero-container img {
@@ -206,8 +236,11 @@
 
 .hero-container-2 {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 100px;
+    width: 100vw;
+    padding: 50px;
+    font-weight: lighter;
 }
 
 .block {
@@ -215,7 +248,7 @@
     flex-direction: column;
     width: 350px;
     height: 500px;
-    padding: 15px;
+
 }
 
 .block img {
@@ -224,33 +257,33 @@
     margin-bottom: 20px;
 }
 
-.block h1 {
-    font-size: 35px;
+.block h3 {
+    font-size: 30px;
 }
 
 .block p {
     font-size: 25px;
-    width: 350px;
 }
 
 .hero-container-3 {
     display: flex;
+    width: 100vw;
     background-color: #E9ECF1;
-    padding: 40px;
+    padding: 50px;
+    gap: 110px;
 }
 
 .sandpack {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 140px;
+    margin-left: 100px;
 }
 
 .hero-container-3-text-container {
     display: flex;
     flex-direction: column;
-    margin-left: 140px;
-    width: 520px;
+    width: 599px;
 }
 
 .hero-container-3-text-container h1 {
@@ -263,9 +296,10 @@
 
 .hero-container-4 {
     display: flex;
+    width: 100vw;
     align-items: center;
     flex-direction: column;
-    padding: 100px;
+    padding: 50px;
 }
 
 .hero-container-4 img {}
@@ -273,7 +307,7 @@
 .hero-container-4 p {
     width: 690px;
     font-size: 25px;
-
+    margin-bottom: 15px
 }
 
 .bestaan {
@@ -282,6 +316,7 @@
 
 .footer {
     background-color: #1C1C1C;
+    width: 100vw;
     padding: 20px;
 }
 
@@ -305,6 +340,7 @@
 
 .footer-2 {
     background-color: #1C1C1C;
+    width: 100vw;
     padding: 20px;
 }
 
