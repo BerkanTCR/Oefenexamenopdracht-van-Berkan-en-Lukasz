@@ -5,6 +5,7 @@ Dit is een website die wij moesten maken voor school. Een simulatie van als we e
 Inspiratie: 
 
 https://legacy.reactjs.org/
+
 https://react.dev/
 
 Kawaii Logos:
