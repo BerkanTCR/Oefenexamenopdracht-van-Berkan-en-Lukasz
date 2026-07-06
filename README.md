@@ -1,4 +1,4 @@
-# Oefenexamenopdracht van Berkan en Lukasz
+# Examenopdracht van Berkan en Lukasz
 
 Dit is een website die wij moesten maken voor school. Een simulatie van als we echt een opdracht zouden krijgen van een werknemer of stagebegeleider.
 
