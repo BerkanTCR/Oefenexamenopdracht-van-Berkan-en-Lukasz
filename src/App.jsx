@@ -11,7 +11,7 @@ const App = () => {
     return (
         <>
 
-            <BrowserRouter>
+            <BrowserRouter basename="/Examenopdracht-van-Berkan-en-Lukasz">
 
                 <Routes>
                     <Route path="/" element={<Navigationbar/>}>

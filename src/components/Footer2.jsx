@@ -3,7 +3,7 @@ const Footer2 = () => {
         <>
             <footer className="footer-2">
                 <div className="footer-container-2">
-                    <img src="/src/assets/node.png" alt="" />
+                    <img src="/Examenopdracht-van-Berkan-en-Lukasz/assets/images/node.png" alt="" />
                     <p>Gepresenteerd door Berkan Altinkaya & Lukasz van den Blink</p>
                 </div>
             </footer>

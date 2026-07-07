@@ -46,7 +46,7 @@ const SearchBar = () => {
     <div className="searchbar-wrapper">
       <form onSubmit={handleSubmit} className="searchbar-container">
         <button type="submit">
-          <img src="/src/assets/search-icon.png" alt="search" />
+          <img src="/Examenopdracht-van-Berkan-en-Lukasz/assets/images/search-icon.png" alt="search" />
         </button>
 
         <input

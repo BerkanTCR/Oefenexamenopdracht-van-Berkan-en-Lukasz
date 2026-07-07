@@ -14,7 +14,7 @@ const Downloaden = () => {
                 </div>
 
                 <div className="nodejs-logo-container">
-                    <img src="/src/assets/nodejs-logo.png" alt="" />
+                    <img src="/Examenopdracht-van-Berkan-en-Lukasz/assets/images/nodejs-logo.png" alt="" />
                 </div>
 
             </div >
